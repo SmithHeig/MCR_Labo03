@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file Bouncable.java
+ * @author Pier Donini
+ * @ModifiedBy James Smith
+ * @ModificationDone: 1) Rendre le mouvement indépendant du displayer mais de passé 
+ * en paramètre la largeur et la hauteur du contenur dans lequel se trouve la forme
  */
 package Shape;
 
@@ -11,7 +13,7 @@ import java.awt.Shape;
 
 /**
  *
- * @author james
+ * @author Pier Donini
  */
 public interface Bouncable {
     void draw(Graphics2D g);

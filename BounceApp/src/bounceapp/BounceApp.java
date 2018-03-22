@@ -1,8 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file BounceApp.java
+ * @author Jeremie Chatillon et James Smith
+ * @date 20.03.18
  */
+
 package bounceapp;
 
 import Displayer.*;
@@ -15,14 +16,15 @@ import java.util.LinkedList;
 import javax.swing.Timer;
 
 /**
- *
- * @author james
+ * @class BounceApp
+ * Coeur du programme (main)
  */
 public class BounceApp {
 
    /** CONSTANTE **/
     private final int NB_CIRCLE = 50;
     private final int NB_SQUARE = 50;
+    private final int TIME_MOVE = 10; // Temps que le timer attant avant de bouger et redessiner les formes
     
     /** ATTRIBUT **/
     private Displayer display;
@@ -78,6 +80,7 @@ public class BounceApp {
     }
     
     /**
+     * main - fonction lancé au lancement de l'application
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -86,7 +89,7 @@ public class BounceApp {
     }
     
     /**
-     * Fonction qui fait bouger les éléments
+     * Fonction qui fait bouger les formes
      */
     public void run(){
         ActionListener actionLinstener = e -> {
@@ -97,7 +100,7 @@ public class BounceApp {
             display.repaint();
         };
 
-        Timer t = new Timer(50, actionLinstener);
+        Timer t = new Timer(TIME_MOVE, actionLinstener);
         t.start();
 
     }

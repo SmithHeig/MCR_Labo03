@@ -15,7 +15,7 @@ import java.awt.geom.RectangularShape;
 import javax.swing.*;
 
 /**
- * @class abstraite représentant une forme
+ * @class abstraite représentant une forme rebondissante
  * Herite de JComponent
  */
 public abstract class ShapeBouncer extends JComponent implements Bouncable{
@@ -30,8 +30,6 @@ public abstract class ShapeBouncer extends JComponent implements Bouncable{
     
     protected RectangularShape shape;
     
-    private Color color;
-    
     private Velocity velocity; // Vecteur de déplacement
     
     /**
@@ -40,15 +38,13 @@ public abstract class ShapeBouncer extends JComponent implements Bouncable{
      * @param posY
      * @param width
      * @param height
-     * @param color
      * @param shape 
      */
-    public ShapeBouncer(double posX,double posY, double width, double height,Color color, Velocity velocity, RectangularShape shape){
+    public ShapeBouncer(double posX,double posY, double width, double height, Velocity velocity, RectangularShape shape){
         this.posX = posX;
         this.posY = posY;
         this.width = width;
         this.height = height;
-        this.color = color;
         this.shape = shape;
          
         this.velocity = velocity; // Génération d'un vecteur de déplacement aléatoire
@@ -104,10 +100,6 @@ public abstract class ShapeBouncer extends JComponent implements Bouncable{
      */
     public double getPosY(){
         return posY;
-    }
-    
-    public Color getColor() {
-        return color;
     }
     
     public Shape getShape(){

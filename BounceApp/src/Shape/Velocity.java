@@ -10,10 +10,10 @@ package Shape;
  * Represente un vöcteur
  */
 public class Velocity {
-    /** ATTRIBUT **/
+    /** ATTRIBUTS **/
     public double x;
     public double y;
-    private final double MAX_SPEED = 10;
+    private final double MAX_SPEED = 2;
     
     /**
      * Constructeur

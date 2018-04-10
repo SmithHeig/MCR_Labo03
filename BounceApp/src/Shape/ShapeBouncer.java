@@ -6,16 +6,15 @@
 
 package Shape;
 
-import java.awt.Graphics2D;
+import Displayer.*;
 import java.awt.Shape;
 import java.awt.geom.RectangularShape;
-import javax.swing.*;
 
 /**
  * @class abstraite représentant une forme rebondissante
  * Herite de JComponent
  */
-public abstract class ShapeBouncer extends JComponent implements Bouncable{
+public abstract class ShapeBouncer implements Bouncable{
     /** CONSTANTE **/
     protected static final double MAX_SIZE = 20;
     /** ATTRIBUTS **/
@@ -51,16 +50,14 @@ public abstract class ShapeBouncer extends JComponent implements Bouncable{
      * Dessiner la forme sur un Graphics
      * @param g Graphics2D sur lequel dessiner la forme
      */
-    public void draw(Graphics2D g){
-        getRenderer().display(g, this);
+    public void draw(){
+        getRenderer().display(AppDisplayer.getInstance().getGraphics(), this);
     }
     
     /**
      * Déplacement de la forme
-     * @param dispWidth - Largeur de l'affichage
-     * @param dispHeight - Largeur de l'affichage
      */
-    public void move(int dispWidth, int dispHeight){
+    public void move(){
         posX += velocity.x;
         posY += velocity.y;
         
@@ -68,17 +65,17 @@ public abstract class ShapeBouncer extends JComponent implements Bouncable{
             velocity.x = -velocity.x;
             posX = 0;
         }
-        if(posX > dispWidth - this.width){
+        if(posX > AppDisplayer.getInstance().getWidth() - this.width){
             velocity.x = -velocity.x;
-            posX = dispWidth - this.width;
+            posX = AppDisplayer.getInstance().getWidth() - this.width;
         }
         if(posY < 0){
             velocity.y = -velocity.y;
             posY = 0;
         }
-        if(posY > dispHeight - this.height){
+        if(posY > AppDisplayer.getInstance().getHeight() - this.height){
             velocity.y = -velocity.y;
-            posY = dispHeight - this.height;
+            posY = AppDisplayer.getInstance().getHeight() - this.height;
         }
         shape.setFrame(posX, posY, width, height);
     }

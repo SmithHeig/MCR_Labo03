@@ -6,7 +6,6 @@
 
 package Shape;
 
-import java.awt.Color;
 import java.awt.geom.*;
 
 /**

@@ -10,6 +10,7 @@ import Displayer.*;
 import Factories.*;
 import Shape.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.LinkedList;
@@ -38,7 +39,9 @@ public class BounceApp {
     public BounceApp(){
         shapes = new LinkedList();
         
-        display = AppDisplayer.getInstance(new KeyListener() {
+        display = AppDisplayer.getInstance();
+        
+        display.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 return;
@@ -94,8 +97,8 @@ public class BounceApp {
     public void run(){
         ActionListener actionLinstener = e -> {
             for(Bouncable s : shapes) {
-                s.move(display.getWidth(), display.getHeight());
-                s.draw(display.getGraphics());
+                s.move();
+                s.draw();
             }
             display.repaint();
         };

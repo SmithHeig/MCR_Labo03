@@ -13,7 +13,7 @@ public class Velocity {
     /** ATTRIBUTS **/
     public double x;
     public double y;
-    private final double MAX_SPEED = 2;
+    private final static double MAX_SPEED = 2;
     
     /**
      * Constructeur

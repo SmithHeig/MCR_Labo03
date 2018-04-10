@@ -22,9 +22,9 @@ import javax.swing.Timer;
 public class BounceApp {
 
    /** CONSTANTE **/
-    private final int NB_CIRCLE = 50;
-    private final int NB_SQUARE = 50;
-    private final int TIME_MOVE = 10; // Temps que le timer attant avant de bouger et redessiner les formes
+    private final static int NB_CIRCLE = 50;
+    private final static int NB_SQUARE = 50;
+    private final static int TIME_MOVE = 10; // Temps que le timer attant avant de bouger et redessiner les formes
     
     /** ATTRIBUT **/
     private Displayer display;

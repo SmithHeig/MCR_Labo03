@@ -6,9 +6,8 @@
 
 package Shape;
 
-import java.awt.Color;
 import java.awt.geom.*;
-import java.util.Random;
+
 
 /**
  * @class Circle - Represente un Cercle

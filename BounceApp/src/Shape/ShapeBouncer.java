@@ -6,9 +6,6 @@
 
 package Shape;
 
-import Displayer.Displayer;
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.RectangularShape;

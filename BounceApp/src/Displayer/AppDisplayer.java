@@ -20,7 +20,7 @@ import javax.swing.*;
  */
 public class AppDisplayer implements Displayer{
     /* CONSTANTE */
-    private final int PREFERED_SIZE = 300; // taille de la fenêtre à la création
+    private final static int PREFERED_SIZE = 300; // taille de la fenêtre à la création
     /* ATTRIBUTS */
     private static Displayer instance;  // instance du singleton
     private JFrame frame;               // main frame

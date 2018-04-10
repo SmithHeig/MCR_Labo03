@@ -16,7 +16,7 @@ import java.awt.geom.RectangularShape;
  */
 public abstract class ShapeBouncer implements Bouncable{
     /** CONSTANTE **/
-    protected static final double MAX_SIZE = 20;
+    protected final static double MAX_SIZE = 20;
     /** ATTRIBUTS **/
     private double posX;
     private double posY;

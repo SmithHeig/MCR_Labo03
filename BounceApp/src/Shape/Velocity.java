@@ -3,6 +3,7 @@
  * @author Jeremie Chatillon et James Smith
  * @date 20.03.18
  */
+
 package Shape;
 
 /**
@@ -13,7 +14,7 @@ public class Velocity {
     /** ATTRIBUTS **/
     public double x;
     public double y;
-    private final double MAX_SPEED = 2;
+    private final double MAX_SPEED = 10;
     
     /**
      * Constructeur

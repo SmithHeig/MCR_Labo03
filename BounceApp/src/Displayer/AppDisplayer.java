@@ -9,6 +9,7 @@ package Displayer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import javax.swing.*;
@@ -26,7 +27,7 @@ public class AppDisplayer implements Displayer{
     private JPanel panel;               // main panel
     private BufferedImage img;          // image contenant les formes
     
-    private AppDisplayer(KeyListener keylistener){
+    private AppDisplayer(){
         /** INITIALISATION */
         frame = new JFrame();
         panel = new JPanel();
@@ -39,7 +40,6 @@ public class AppDisplayer implements Displayer{
         frame.setResizable(true);
         frame.pack();
         frame.setVisible(true);
-        frame.addKeyListener(keylistener);
         
         /* CREATION DE L'IMAGE */
         img = (BufferedImage)panel.createImage(PREFERED_SIZE, PREFERED_SIZE);
@@ -52,9 +52,9 @@ public class AppDisplayer implements Displayer{
      * retour l'instance en cours
      * @return Displayer - L'instance de l'affichage
      */
-    public static Displayer getInstance(KeyListener keylistener){
+    public static Displayer getInstance(){
         if(instance == null){
-            instance = new AppDisplayer(keylistener);
+            instance = new AppDisplayer();
         }
         return instance;
     }
@@ -102,5 +102,10 @@ public class AppDisplayer implements Displayer{
     @Override
     public void setTitle(String s) {
         frame.setTitle(s);
+    }
+
+    @Override
+    public void addKeyListener(KeyAdapter ka) {
+        frame.addKeyListener(ka);
     }
 }

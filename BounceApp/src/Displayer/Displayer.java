@@ -7,6 +7,7 @@
 package Displayer;
 
 import java.awt.Graphics2D;
+import java.awt.event.KeyAdapter;
 
 /**
  * Interface representant une afficheur
@@ -41,4 +42,10 @@ public interface Displayer
      * @param s - nom de la fenêtre
      */
     void setTitle(String s);
+    
+    /**
+     * Permet de binder les touches du claver et le lier à la frame
+     * @param ka - KeyAdapter
+     */
+    void addKeyListener(KeyAdapter ka);
 }

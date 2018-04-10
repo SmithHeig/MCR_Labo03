@@ -10,6 +10,7 @@ import Displayer.*;
 import Factories.*;
 import Shape.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.LinkedList;
@@ -24,11 +25,11 @@ public class BounceApp {
    /** CONSTANTE **/
     private final int NB_CIRCLE = 50;
     private final int NB_SQUARE = 50;
-    private final int TIME_MOVE = 10; // Temps que le timer attant avant de bouger et redessiner les formes
+    private final int TIME_MOVE = 3; // Temps que le timer attant avant de bouger et redessiner les formes
     
     /** ATTRIBUT **/
     private Displayer display;
-    private LinkedList<ShapeBouncer> shapes;
+    private LinkedList<Bouncable> shapes;
     private ShapeFilledFactory shapeFilledFactory;
     private ShapeEmptyFactory shapeEmptyFactory;
     
@@ -38,7 +39,9 @@ public class BounceApp {
     public BounceApp(){
         shapes = new LinkedList();
         
-        display = AppDisplayer.getInstance(new KeyListener() {
+        display = AppDisplayer.getInstance();
+        
+        display.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 return;
@@ -93,9 +96,9 @@ public class BounceApp {
      */
     public void run(){
         ActionListener actionLinstener = e -> {
-            for(ShapeBouncer s : shapes) {
-                s.move(display.getWidth(), display.getHeight());
-                s.draw(display.getGraphics());
+            for(Bouncable s : shapes) {
+                s.move();
+                s.draw();
             }
             display.repaint();
         };

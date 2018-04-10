@@ -28,7 +28,7 @@ public class BounceApp {
     
     /** ATTRIBUT **/
     private Displayer display;
-    private LinkedList<ShapeBouncer> shapes;
+    private LinkedList<Bouncable> shapes;
     private ShapeFilledFactory shapeFilledFactory;
     private ShapeEmptyFactory shapeEmptyFactory;
     
@@ -93,7 +93,7 @@ public class BounceApp {
      */
     public void run(){
         ActionListener actionLinstener = e -> {
-            for(ShapeBouncer s : shapes) {
+            for(Bouncable s : shapes) {
                 s.move(display.getWidth(), display.getHeight());
                 s.draw(display.getGraphics());
             }

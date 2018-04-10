@@ -827,5 +827,13 @@
         <h>141</h>
       </noteGeometry>
     </note>
+    <note color="-2079" content="Nous avons mis que les factory utilise les classe abstraite Square et Cricle car il créé les objets sous forme de classe anonyme en se basant sur ces classes">
+      <noteGeometry>
+        <x>1650</x>
+        <y>1060</y>
+        <w>100</w>
+        <h>169</h>
+      </noteGeometry>
+    </note>
   </umlView>
 </classDiagram>
